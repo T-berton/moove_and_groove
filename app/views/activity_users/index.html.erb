@@ -1,0 +1,21 @@
+<%= render '/shared/nav' %>
+
+<div class="container-fluid py-5 bg-primary">
+  <h2>My Activities</h2 >
+
+  <% if @activity_users.any? %>
+        
+      <%= @activity_users.each do |activity_user| %>
+      <p><%= activity_user.activity.name%></p>
+      <p><%= activity_user.activity.description%> </p>
+
+      <p><%= activity_user.duration%></p>
+      <p><%= activity_user.date%> </p>
+      <% end %>  
+    <% else %>
+      <p>No activities found</p>
+      <%= link_to 'Start your journey !', activity_user_new_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<%= render '/shared/footer' %>

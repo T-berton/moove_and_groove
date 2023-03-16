@@ -1,0 +1,20 @@
+<%= render '/shared/nav' %>
+
+
+<div class="container-fluid bg-primary py-5">
+  <%= form_for(@activity_user, url: activity_user_create_path) do |f| %>
+    <%= f.collection_select :activity_id, Activity.all, :id, :name, {}, { class: 'btn btn-secondary dropdown-toggle my-3 w-50', 'data-toggle': 'dropdown' } %>
+    <div class="my-3 w-50">
+    <%= f.label :duration %>
+    <%= f.text_field :duration, class: 'form-control' %>
+    </div>
+
+    <div class="my-3 w-50">
+    <%= f.label :date %>
+    <%= f.date_select :date, class: 'form-control' %>
+    </div>
+
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
+  <% end %>
+</div>
+<%= render '/shared/footer' %>

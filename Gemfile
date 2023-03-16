@@ -6,6 +6,13 @@ ruby "3.1.3"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
+# Authentification Gem for users
+gem 'devise'
+
+#For Custom Bootstrap
+gem 'sassc'
+
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -19,7 +26,7 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem "turbo-rails", '~> 1.0.0'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -70,3 +77,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "jsbundling-rails", "~> 1.1"
+
+gem "cssbundling-rails", "~> 1.1"
